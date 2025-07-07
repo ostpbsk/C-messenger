@@ -38,7 +38,7 @@ int main() {
      */
     if((status = getaddrinfo("localhost", PORT, &hints, &servinfo)) != 0)
     {
-        fprintf(stderr, "Error: Could not get address info. GAI error: %s\n", gai_strerror);
+        fprintf(stderr, "Error: Could not get address info. GAI error: %d\n", gai_strerror);
         exit(1);
     }
 

@@ -3,6 +3,5 @@
 
 #define PORT 3333
 
-char hostname[] = "localhost";
 
 #endif
