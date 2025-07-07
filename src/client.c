@@ -20,7 +20,6 @@ int main() {
     memset(&hints, 0, sizeof hints);
     hints.ai_family = AF_UNSPEC; // Either IPv4 or IPv6 address family
     hints.ai_socktype = SOCK_STREAM; // TCP stream sockets
-    hints.ai_flags = AI_PASSIVE; // Fill out the IP automitically
 
     /***
      * 
@@ -37,9 +36,9 @@ int main() {
      * 
      * @return: 0 on success, not 0 on error
      */
-    if((status = getaddrinfo(NULL, PORT, &hints, &servinfo)) != 0)
+    if((status = getaddrinfo("localhost", PORT, &hints, &servinfo)) != 0)
     {
-        fprintf(stderr, "Error: Could not get the address info. GAI error: %s\n", gai_strerror);
+        fprintf(stderr, "Error: Could not get address info. GAI error: %s\n", gai_strerror);
         exit(1);
     }
 
